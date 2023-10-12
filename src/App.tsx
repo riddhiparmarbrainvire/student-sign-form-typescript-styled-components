@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./components/styles/GlobalStyled";
+import { Input } from "./components/styles/InputStyled";
+import { FormContainer } from "./components/styles/FormContainer";
+import { ImageDiv } from "./components/styles/ImageStyled";
+import { FormImage } from "./components/styles/FormImageStyled";
+import img from "./images/img.svg";
 
-function App() {
+const theme = {
+  colors: {
+    body: "#88a9f0",
+  },
+  mobile: "768px",
+};
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyles />
+        <FormContainer>
+          <ImageDiv>
+            <FormImage src={img} />
+          </ImageDiv>
+        </FormContainer>
+        <Input />
+      </>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
