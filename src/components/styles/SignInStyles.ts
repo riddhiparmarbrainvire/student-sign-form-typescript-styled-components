@@ -211,9 +211,10 @@ export const ButtonIconContainer = styled.div`
   display: flex;
 `;
 
-export const SignUpStyledButton = styled.button`
+export const SignUpStyledButton = styled.button<{ disabled: boolean }>`
   align-items: center;
-  background-color: #1f47bf;
+  /* background-color: #1f47bf; */
+  background: ${(props) => (props.disabled ? "grey" : "blue")};
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
@@ -252,4 +253,10 @@ export const SignUpStyledButton = styled.button`
     color: rgba(0, 0, 0, 0.65);
     transform: translateY(0);
   }
+`;
+
+export const DisplayErrorMessage = styled.p`
+  color: red;
+  font-size: 12px;
+  margin: 8px;
 `;
