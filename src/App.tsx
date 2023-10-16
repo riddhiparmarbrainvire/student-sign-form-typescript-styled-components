@@ -28,7 +28,7 @@ const App: React.FC = () => {
             <Column
               size={7}
               sizeMd={12}
-              sizeLg={7}
+              sizeLg={12}
               sizeSm={12}
               background="#dce6f2"
               borderRadiusForColumnOne={20}
@@ -39,7 +39,7 @@ const App: React.FC = () => {
             <Column
               size={5}
               sizeMd={12}
-              sizeLg={5}
+              sizeLg={12}
               sizeSm={12}
               background="white"
               borderRadiusForColumnTwo={20}
