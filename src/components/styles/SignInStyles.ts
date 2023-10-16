@@ -18,12 +18,46 @@ export const FormWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1200px) {
+    height: 100%;
+    min-height: 100vh;
+  }
+
+  @media (max-width: 992px) {
+    height: 100%;
+    min-height: 100vh;
+  }
 `;
 
 export const Columns = styled.div`
   display: flex;
   height: 80%;
   width: 80%;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0 5% 0;
+  }
+
+  @media (max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0 5% 0;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0 5% 0;
+  }
+
+  @media (max-width: 576px) {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0 5% 0;
+  }
 `;
 
 export const Column = styled.div<ColumnProps>`
@@ -40,18 +74,22 @@ export const Column = styled.div<ColumnProps>`
 
   @media (max-width: 576px) {
     flex: ${({ sizeSm }) => sizeSm};
+    border-radius: 0px;
   }
 
   @media (max-width: 768px) {
     flex: ${({ sizeMd }) => sizeMd};
+    border-radius: 0px;
   }
 
   @media (max-width: 992px) {
     flex: ${({ sizeLg }) => sizeLg};
+    border-radius: 0px;
   }
 
   @media (max-width: 1200px) {
     flex: ${({ sizeXl }) => sizeXl};
+    border-radius: 0px;
   }
 `;
 
