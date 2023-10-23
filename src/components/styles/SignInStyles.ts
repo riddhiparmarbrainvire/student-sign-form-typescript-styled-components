@@ -14,7 +14,7 @@ type ColumnProps = {
 
 export const FormWrapper = styled.div`
   background-color: #8daef2;
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

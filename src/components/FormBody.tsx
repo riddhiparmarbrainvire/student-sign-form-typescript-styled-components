@@ -28,7 +28,7 @@ const FormBody: React.FC = () => {
     password: "",
   });
 
-  const [errors, setErrors] = useState<FormValues>({
+  const [formErrors, setFormErrors] = useState<FormValues>({
     name: "",
     email: "",
     phone: "",
@@ -53,9 +53,7 @@ const FormBody: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     let formErrors = validateForm(values);
-    setErrors(formErrors);
-
-    console.log(formErrors, "formErrors");
+    setFormErrors(formErrors);
 
     if (Object.values(formErrors).every((value) => value === "")) {
       // Form is valid, submit data
@@ -80,7 +78,7 @@ const FormBody: React.FC = () => {
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
       errors.email = "Email is invalid";
     }
-    console.log(values.phone.length, "values.phone");
+   
     if (!values.phone) {
       errors.phone = "Phone is required";
     } else if (!/^\d+$/.test(values.phone)) {
@@ -115,8 +113,8 @@ const FormBody: React.FC = () => {
             onChange={handleChange}
           />
         </InputContainer>
-        {errors.name && (
-          <DisplayErrorMessage>{errors.name}</DisplayErrorMessage>
+        {formErrors.name && (
+          <DisplayErrorMessage>{formErrors.name}</DisplayErrorMessage>
         )}
         <InputContainer>
           <IconContainer>
@@ -130,8 +128,8 @@ const FormBody: React.FC = () => {
             onChange={handleChange}
           />
         </InputContainer>
-        {errors.email && (
-          <DisplayErrorMessage>{errors.email}</DisplayErrorMessage>
+        {formErrors.email && (
+          <DisplayErrorMessage>{formErrors.email}</DisplayErrorMessage>
         )}
         <InputContainer>
           <IconContainer>
@@ -145,8 +143,8 @@ const FormBody: React.FC = () => {
             onChange={handleChange}
           />
         </InputContainer>
-        {errors.phone && (
-          <DisplayErrorMessage>{errors.phone}</DisplayErrorMessage>
+        {formErrors.phone && (
+          <DisplayErrorMessage>{formErrors.phone}</DisplayErrorMessage>
         )}
         <InputContainer>
           <IconContainer>
@@ -160,8 +158,8 @@ const FormBody: React.FC = () => {
             onChange={handleChange}
           />
         </InputContainer>
-        {errors.password && (
-          <DisplayErrorMessage>{errors.password}</DisplayErrorMessage>
+        {formErrors.password && (
+          <DisplayErrorMessage>{formErrors.password}</DisplayErrorMessage>
         )}
         <SignUpStyledButton type="submit" disabled={submitDisabled}>
           Sign up
